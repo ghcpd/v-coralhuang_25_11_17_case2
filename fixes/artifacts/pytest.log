@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.2.1, pluggy-1.6.0 -- /mnt/c/Bug_Bash/25_11_17/v-coralhuang_25_11_17_case2/fixes/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /mnt/c/Bug_Bash/25_11_17/v-coralhuang_25_11_17_case2
+collecting ... collected 5 items
+
+fixes/tests/test_translate_cli.py::test_cli_compile_success PASSED
+fixes/tests/test_translate_cli.py::test_cli_reports_missing_msgfmt PASSED
+fixes/tests/test_translate_cli.py::test_cli_reports_missing_translation_dir PASSED
+fixes/tests/test_translate_cli.py::test_cli_handles_unwritable_output_dir PASSED
+fixes/tests/test_translate_cli.py::test_compiler_raises_when_no_po_files PASSED
+
+============================== 5 passed in 1.97s ===============================
