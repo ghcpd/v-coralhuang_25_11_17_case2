@@ -1,0 +1,47 @@
+import os
+import subprocess
+import click
+from flask import current_app
+
+BASEDIR = os.path.abspath(os.path.dirname(__file__))
+WIN_MSGFMT_PATH = r"C:\Program Files (x86)\gettext\bin\msgfmt.exe"
+
+def register(app):
+    @app.cli.group()
+    def translate():
+        pass
+
+    @translate.command()
+    @click.argument('lang')
+    def init(lang):
+        pass
+
+    @translate.command()
+    def update():
+        pass
+
+    @translate.command()
+    def compile():
+        if os.name == "nt":
+            msgfmt_cmd = WIN_MSGFMT_PATH
+        else:
+            msgfmt_cmd = "msgfmt"
+
+        translations_dir = os.path.join(BASEDIR, "translations")
+        output_dir = current_app.config.get(
+            "BABEL_TRANSLATION_DIRECTORY", translations_dir
+        )
+
+        for dirname, _, files in os.walk(translations_dir):
+            for filename in files:
+                if not filename.endswith(".po"):
+                    continue
+
+                lang = os.path.basename(os.path.dirname(dirname))
+                po_file = os.path.join(dirname, filename)
+                mo_file = os.path.join(output_dir, lang, "LC_MESSAGES", "messages.mo")
+
+                os.makedirs(os.path.dirname(mo_file), exist_ok=True)
+
+                cmd = f'"{msgfmt_cmd}" -o "{mo_file}" "{po_file}"'
+                subprocess.run(cmd, shell=True, check=True)
