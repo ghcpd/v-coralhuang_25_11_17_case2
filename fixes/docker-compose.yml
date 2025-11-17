@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  microblog:
+    build:
+      context: .
+      dockerfile: Dockerfile.fix
+    container_name: microblog-fix
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=microblog.py
+      - FLASK_ENV=development
+    volumes:
+      - ./translations:/app/translations
+    user: microblog
