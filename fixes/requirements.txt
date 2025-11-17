@@ -1,0 +1,12 @@
+Flask>=2.2,<3.0
+Flask-Babel>=2.0
+Babel>=2.11.0
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Login
+Flask-Mail
+Flask-Bootstrap
+Flask-Moment
+click
+pytest
+pytest-cov
