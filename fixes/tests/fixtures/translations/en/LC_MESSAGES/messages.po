@@ -1,0 +1,12 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TEST\n"
+"POT-Creation-Date: 2025-11-17 00:00+0000\n"
+"PO-Revision-Date: 2025-11-17 00:00+0000\n"
+"Last-Translator: Test <test@example.com>\n"
+"Language-Team: none\n"
+"Language: en\n"
+
+#: hello
+msgid "Hello"
+msgstr "Hello"
