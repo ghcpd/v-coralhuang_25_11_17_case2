@@ -1,0 +1,8 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
+rootdir: /mnt/c/Bug_Bash/25_11_17/v-coralhuang_25_11_17_case2
+collected 3 items
+
+fixes/tests/test_translate_cli.py s.s
+
+========================= 1 passed, 2 skipped in 1.75s =========================

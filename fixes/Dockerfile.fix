@@ -1,0 +1,17 @@
+FROM python:3.11-slim
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gettext \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+COPY . /workspace
+
+RUN python -m venv .venv
+RUN /bin/bash -c ". .venv/bin/activate && python -m pip install --upgrade pip && pip install -r fixes/requirements.txt"
+
+RUN useradd --create-home --uid 1000 flaskuser \
+    && mkdir -p fixes/artifacts \
+    && chown -R flaskuser:flaskuser /workspace
+USER flaskuser
+ENV PATH="/workspace/.venv/bin:${PATH}"
