@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  translator:
+    build:
+      context: ..
+      dockerfile: fixes/Dockerfile.fix
+    volumes:
+      - ./fixes/artifacts:/workspace/fixes/artifacts
+    command: /bin/bash -c "cd /workspace && ./fixes/run_test.sh"
