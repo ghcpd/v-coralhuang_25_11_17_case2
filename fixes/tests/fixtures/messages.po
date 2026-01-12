@@ -1,0 +1,15 @@
+# Translation catalogue for German language
+# This is a minimal valid .po file for testing
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: de\n"
+
+msgid "Hello"
+msgstr "Hallo"
+
+msgid "Goodbye"
+msgstr "Auf Wiedersehen"
+
+msgid "Please log in to access this page."
+msgstr "Bitte melden Sie sich an, um auf diese Seite zuzugreifen."
